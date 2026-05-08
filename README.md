@@ -2,7 +2,7 @@
 
 A fast, browser-based tool for searching **Diablo 4 affixes**, planning your **Roll Target** before using the Transfigure system, and identifying which **Tuning Prism** to use for each mod.
 
-**[Live Tool →](https://theveug.github.io/d4-s13-crafting-tool/)**
+**[Live Tool →](https://theveug.github.io/d4-s13-crafting-tool/)** _(replace with your GitHub Pages URL)_
 
 ---
 
@@ -64,20 +64,34 @@ Your Roll Target selections are saved in your browser's localStorage, so they pe
 
 ## Running Locally
 
-No build step needed. Just open `index.html` in any modern browser.
+No build step or dependencies needed, but because the project is split across multiple files (`css/`, `js/`) you need a local web server — browsers block loading local JS files directly via `file://`.
 
 ```
-git clone https://theveug.github.io/d4-s13-crafting-tool/
+git clone https://github.com/theveug/d4-s13-crafting-tool
 cd d4-s13-crafting-tool
-# open index.html in your browser
 ```
+
+Then serve it with any of these:
+
+```bash
+# Python (usually pre-installed)
+python -m http.server 8080
+
+# Node (if installed)
+npx serve .
+
+# VS Code — install the "Live Server" extension, right-click index.html → Open with Live Server
+```
+
+Then open `http://localhost:8080` in your browser.
 
 ---
 
 ## Notes & Caveats
 
 - Prism information is based on Season 13 data. Check patch notes if things change after a major update.
-- The class filter is community-sourced and **incomplete** — some skill mods may be missing or assigned to the wrong class. If in doubt, keep the filter on _All Classes_.
+- **Slot filter** covers Barbarian, Druid, Necromancer, Rogue, Sorcerer, and Spiritborn. Paladin and Warlock are Season 13 new classes — Wowhead has no affix-by-slot data for them yet. Slot filter will show all affixes unfiltered for those two classes until data becomes available.
+- **Class filter** skill assignments for Paladin and Warlock are best-guesses based on skill names — treat them as approximate.
 - Barrier Generation and Fortify Generation are labelled as Pragmatic prism targets but are currently reported as bugged/untargetable in Transfigure.
 
 ---
