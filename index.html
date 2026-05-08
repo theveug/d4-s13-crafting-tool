@@ -20,7 +20,8 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
       color: var(--text);
       font: 13px/1.35 Georgia, "Times New Roman", serif;
       background: radial-gradient(circle at 50% -10%, rgba(120, 120, 120, .16), transparent 30%), linear-gradient(#111, #050505);
@@ -30,7 +31,9 @@
     .game-frame {
       max-width: 1420px;
       margin: 0 auto;
-      min-height: calc(100vh - 20px);
+      height: calc(100vh - 20px);
+      display: flex;
+      flex-direction: column;
       border: 3px solid #1e2b2a;
       box-shadow: 0 0 0 1px #5b6764 inset, 0 0 0 6px #0a0c0c inset, 0 24px 70px rgba(0, 0, 0, .7);
       background: repeating-linear-gradient(0deg, rgba(255, 255, 255, .018) 0 1px, transparent 1px 6px), #0b0e0e;
@@ -212,6 +215,8 @@
     }
 
     .bodyarea {
+      flex: 1;
+      overflow-y: auto;
       padding: 0 16px 20px;
     }
 
@@ -389,8 +394,6 @@
     }
 
     .footerbar {
-      position: sticky;
-      bottom: 0;
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -410,23 +413,60 @@
       cursor: pointer;
     }
 
-    .meta {
-      color: #847b72;
-      text-align: center;
-      font: 12px system-ui, sans-serif;
-      padding: 8px;
+    .help-panel {
+      display: none;
+      padding: 10px 20px;
+      border-bottom: 1px solid #2b3533;
+      background: rgba(0,0,0,.28);
+    }
+    .help-panel.active { display: block; }
+    .help-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 28px;
+    }
+    .help-section-title {
+      color: var(--gold);
+      font: 700 11px system-ui,sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 5px;
+    }
+    .help-row {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 4px;
+      font: 12px system-ui,sans-serif;
+      color: #b8b0a6;
+      line-height: 1.4;
+    }
+    .help-key {
+      color: #e1c092;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .help-prism-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
     }
 
     @media (max-width:900px) {
       body {
         padding: 0;
+        height: 100vh;
+        overflow: hidden;
       }
 
       .game-frame {
-        min-height: 100vh;
+        height: 100vh;
         border-left: 0;
         border-right: 0;
       }
+
+      .help-grid { grid-template-columns: 1fr; }
 
       .toprow {
         grid-template-columns: 1fr;
@@ -493,15 +533,35 @@
       <div class="selection-title">Current Roll Target</div>
       <div class="selected-chips" id="selectedChips"></div>
     </div>
+    <div class="help-panel" id="helpPanel">
+      <div class="help-grid">
+        <div>
+          <div class="help-section-title">How to use</div>
+          <div class="help-row"><span class="help-key">Search</span><span>Type to filter mods by name across all categories.</span></div>
+          <div class="help-row"><span class="help-key">Category pills</span><span>Click a pill to focus one category; click All to reset.</span></div>
+          <div class="help-row"><span class="help-key">Class filter</span><span>Limit mods to your class, or keep All Classes for universal affixes.</span></div>
+          <div class="help-row"><span class="help-key">Checkbox</span><span>Tick any mod to add it to your Roll Target list.</span></div>
+          <div class="help-row"><span class="help-key">Roll Target</span><span>Toggle to see only your checked mods. Toggle again to return to full list. Picks are saved between sessions.</span></div>
+          <div class="help-row"><span class="help-key">Clear Picks</span><span>Remove all selected mods and reset Roll Target mode.</span></div>
+        </div>
+        <div>
+          <div class="help-section-title">Tuning Prism colours</div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#d4622a"></span><span class="help-key">Aggressive</span></span><span>Offensive mods (damage, attack speed, crit, etc.)</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#4a88cc"></span><span class="help-key">Protector's</span></span><span>Defensive mods incl. Resistance to All Elements, life, armour, dodge.</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#9a50c8"></span><span class="help-key">Chromatic</span></span><span>Individual elemental resistances only.</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#c8a030"></span><span class="help-key">Pragmatic</span></span><span>Utility: cooldown reduction, lucky hit, potion capacity, etc.</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#3a9858"></span><span class="help-key">Adept's</span></span><span>Skill ranks and core stats.</span></div>
+          <div class="help-row" style="margin-top:6px;color:#92897d;font-style:italic;">Mods with two badges appear in both prism pools — using either prism can affect them.</div>
+        </div>
+      </div>
+    </div>
     <div class="bodyarea" id="results"></div>
     <div class="footerbar">
       <button type="button" class="redbutton" id="targetOnly">Roll Target</button>
       <button type="button" class="redbutton" id="clearPicks">Clear Picks</button>
       <button type="button" class="redbutton" id="expandAll">Expand All</button>
       <button type="button" class="redbutton" id="collapseAll">Collapse All</button>
-    </div>
-    <div class="meta">Edit each affix's <code>classes</code> array in <code>index.html</code>. Example:
-      <code>"classes": ["Sorcerer"]</code> or <code>["Barbarian","Druid"]</code>.
+      <button type="button" class="redbutton" id="helpToggle">? Help</button>
     </div>
   </div>
   <script>
@@ -3526,6 +3586,8 @@
     });
     clearPicks.addEventListener('click', () => { picked.clear(); localStorage.removeItem("d4-picked-affixes"); rollTargetOnly = false; localStorage.removeItem("d4-roll-target-only"); render(); });
     expandAll.addEventListener('click', () => { forcedOpen = new Set(categories); render(); }); collapseAll.addEventListener('click', () => { forcedOpen = new Set(); render(); });
+    const helpPanel = document.getElementById('helpPanel');
+    document.getElementById('helpToggle').addEventListener('click', () => helpPanel.classList.toggle('active'));
     loadUrl(); render();
   </script>
 </body>
