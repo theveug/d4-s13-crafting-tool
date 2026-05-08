@@ -417,37 +417,46 @@
       display: none;
       padding: 10px 20px;
       border-bottom: 1px solid #2b3533;
-      background: rgba(0,0,0,.28);
+      background: rgba(0, 0, 0, .28);
     }
-    .help-panel.active { display: block; }
+
+    .help-panel.active {
+      display: block;
+    }
+
     .help-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px 28px;
     }
+
     .help-section-title {
       color: var(--gold);
-      font: 700 11px system-ui,sans-serif;
+      font: 700 11px system-ui, sans-serif;
       text-transform: uppercase;
       letter-spacing: .12em;
       margin-bottom: 5px;
     }
+
     .help-row {
       display: flex;
       gap: 7px;
       margin-bottom: 4px;
-      font: 12px system-ui,sans-serif;
+      font: 12px system-ui, sans-serif;
       color: #b8b0a6;
       line-height: 1.4;
     }
+
     .help-key {
       color: #e1c092;
       white-space: nowrap;
       flex-shrink: 0;
     }
+
     .help-prism-dot {
       display: inline-block;
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       margin-right: 5px;
       vertical-align: middle;
@@ -466,7 +475,9 @@
         border-right: 0;
       }
 
-      .help-grid { grid-template-columns: 1fr; }
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
 
       .toprow {
         grid-template-columns: 1fr;
@@ -526,6 +537,8 @@
         <select id="classFilter" title="Class filter"></select>
         <label class="class-toggle"><input id="showAllClasses" type="checkbox" checked><span class="fakecheck"></span>
           Include All-Class Mods</label>
+        <div style="font:10px system-ui,sans-serif;color:#6a6058;text-align:right;">⚠ Class filter is incomplete — skill
+          mods may be missing or misassigned.</div>
       </div>
     </div>
     <div class="tools" id="pills"></div>
@@ -537,21 +550,37 @@
       <div class="help-grid">
         <div>
           <div class="help-section-title">How to use</div>
-          <div class="help-row"><span class="help-key">Search</span><span>Type to filter mods by name across all categories.</span></div>
-          <div class="help-row"><span class="help-key">Category pills</span><span>Click a pill to focus one category; click All to reset.</span></div>
-          <div class="help-row"><span class="help-key">Class filter</span><span>Limit mods to your class, or keep All Classes for universal affixes.</span></div>
-          <div class="help-row"><span class="help-key">Checkbox</span><span>Tick any mod to add it to your Roll Target list.</span></div>
-          <div class="help-row"><span class="help-key">Roll Target</span><span>Toggle to see only your checked mods. Toggle again to return to full list. Picks are saved between sessions.</span></div>
-          <div class="help-row"><span class="help-key">Clear Picks</span><span>Remove all selected mods and reset Roll Target mode.</span></div>
+          <div class="help-row"><span class="help-key">Search</span><span>Type to filter mods by name across all
+              categories.</span></div>
+          <div class="help-row"><span class="help-key">Category pills</span><span>Click a pill to focus one category;
+              click All to reset.</span></div>
+          <div class="help-row"><span class="help-key">Class filter</span><span>Limit mods to your class, or keep All
+              Classes for universal affixes. <em style="color:#6a6058;">Note: class assignments are incomplete and may
+                be inaccurate.</em></span></div>
+          <div class="help-row"><span class="help-key">Checkbox</span><span>Tick any mod to add it to your Roll Target
+              list.</span></div>
+          <div class="help-row"><span class="help-key">Roll Target</span><span>Toggle to see only your checked mods.
+              Toggle again to return to full list. Picks are saved between sessions.</span></div>
+          <div class="help-row"><span class="help-key">Clear Picks</span><span>Remove all selected mods and reset Roll
+              Target mode.</span></div>
         </div>
         <div>
           <div class="help-section-title">Tuning Prism colours</div>
-          <div class="help-row"><span><span class="help-prism-dot" style="background:#d4622a"></span><span class="help-key">Aggressive</span></span><span>Offensive mods (damage, attack speed, crit, etc.)</span></div>
-          <div class="help-row"><span><span class="help-prism-dot" style="background:#4a88cc"></span><span class="help-key">Protector's</span></span><span>Defensive mods incl. Resistance to All Elements, life, armour, dodge.</span></div>
-          <div class="help-row"><span><span class="help-prism-dot" style="background:#9a50c8"></span><span class="help-key">Chromatic</span></span><span>Individual elemental resistances only.</span></div>
-          <div class="help-row"><span><span class="help-prism-dot" style="background:#c8a030"></span><span class="help-key">Pragmatic</span></span><span>Utility: cooldown reduction, lucky hit, potion capacity, etc.</span></div>
-          <div class="help-row"><span><span class="help-prism-dot" style="background:#3a9858"></span><span class="help-key">Adept's</span></span><span>Skill ranks and core stats.</span></div>
-          <div class="help-row" style="margin-top:6px;color:#92897d;font-style:italic;">Mods with two badges appear in both prism pools — using either prism can affect them.</div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#d4622a"></span><span
+                class="help-key">Aggressive</span></span><span>Offensive mods (damage, attack speed, crit, etc.)</span>
+          </div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#4a88cc"></span><span
+                class="help-key">Protector's</span></span><span>Defensive mods incl. Resistance to All Elements, life,
+              armour, dodge.</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#9a50c8"></span><span
+                class="help-key">Chromatic</span></span><span>Individual elemental resistances only.</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#c8a030"></span><span
+                class="help-key">Pragmatic</span></span><span>Utility: cooldown reduction, lucky hit, potion capacity,
+              etc.</span></div>
+          <div class="help-row"><span><span class="help-prism-dot" style="background:#3a9858"></span><span
+                class="help-key">Adept's</span></span><span>Skill ranks and core stats.</span></div>
+          <div class="help-row" style="margin-top:6px;color:#92897d;font-style:italic;">Mods with two badges appear in
+            both prism pools — using either prism can affect them.</div>
         </div>
       </div>
     </div>
@@ -567,40 +596,40 @@
   <script>
     const PRISM_OVERRIDES = {
       // dual-pool: core stats appear in both Aggressive and Adept's
-      "Strength":             ["Aggressive", "Adept's"],
-      "Dexterity":            ["Aggressive", "Adept's"],
-      "Intelligence":         ["Aggressive", "Adept's"],
-      "Willpower":            ["Aggressive", "Adept's"],
+      "Strength": ["Aggressive", "Adept's"],
+      "Dexterity": ["Aggressive", "Adept's"],
+      "Intelligence": ["Aggressive", "Adept's"],
+      "Willpower": ["Aggressive", "Adept's"],
       // individual resists = Chromatic only; "Resistance to All Elements" stays as Protector's via category default
-      "Fire Resistance":      ["Chromatic"],
-      "Cold Resistance":      ["Chromatic"],
+      "Fire Resistance": ["Chromatic"],
+      "Cold Resistance": ["Chromatic"],
       "Lightning Resistance": ["Chromatic"],
-      "Poison Resistance":    ["Chromatic"],
-      "Shadow Resistance":    ["Chromatic"],
-      "Physical Resistance":  ["Chromatic"],
+      "Poison Resistance": ["Chromatic"],
+      "Shadow Resistance": ["Chromatic"],
+      "Physical Resistance": ["Chromatic"],
       // single-pool overrides
-      "Potion Capacity":      ["Pragmatic"],
-      "Lucky Hit Chance":     ["Pragmatic"],
-      "Healing Received":     ["Pragmatic"],
-      "Barrier Generation":   ["Pragmatic"],
-      "Fortify Generation":   ["Pragmatic"],
-      "Cooldown Reduction":   ["Pragmatic"],
+      "Potion Capacity": ["Pragmatic"],
+      "Lucky Hit Chance": ["Pragmatic"],
+      "Healing Received": ["Pragmatic"],
+      "Barrier Generation": ["Pragmatic"],
+      "Fortify Generation": ["Pragmatic"],
+      "Cooldown Reduction": ["Pragmatic"],
       "Impairment Reduction": ["Pragmatic"],
     };
     const PRISM_COLORS = {
-      "Aggressive":  "#d4622a",
+      "Aggressive": "#d4622a",
       "Protector's": "#4a88cc",
-      "Chromatic":   "#9a50c8",
-      "Pragmatic":   "#c8a030",
-      "Adept's":     "#3a9858",
+      "Chromatic": "#9a50c8",
+      "Pragmatic": "#c8a030",
+      "Adept's": "#3a9858",
       "Resourceful": "#4c7a7a",
     };
     function getPrisms(x) {
       if (PRISM_OVERRIDES[x.affix]) return PRISM_OVERRIDES[x.affix];
       if (x.category === "Offensive") return ["Aggressive"];
       if (x.category === "Defensive") return ["Protector's"];
-      if (x.category === "Utility")   return ["Adept's"];
-      if (x.category === "Mobility")  return ["Pragmatic"];
+      if (x.category === "Utility") return ["Adept's"];
+      if (x.category === "Mobility") return ["Pragmatic"];
       if (x.category === "Resources") return ["Resourceful"];
       return [];
     }
@@ -3507,6 +3536,122 @@
     */
 
     const GAME_CLASSES = ["All", "Barbarian", "Druid", "Necromancer", "Rogue", "Sorcerer", "Spiritborn", "Paladin", "Warlock", "Unknown"];
+
+    // Class-to-skill mapping. Applied at startup to override the "All" placeholders in AFFIXES.
+    const CLASS_SKILLS = {
+      Barbarian: [
+        // Skill categories
+        "Weapon Mastery Skills", "Ancient Skills", "Dust Devil Skills", "Earthquake Skills", "Iron Shrapnel Skills", "Brawling Skills",
+        // Basic
+        "Bash", "Flay", "Frenzy", "Lunging Strike",
+        // Core
+        "Double Swing", "Hammer of the Ancients", "Rend", "Upheaval", "Whirlwind",
+        // Defensive
+        "Challenging Shout", "Ground Stomp", "Iron Skin", "Rallying Cry", "War Cry",
+        // Brawling
+        "Charge", "Death Blow", "Kick", "Leap", "Rupture", "Steel Grasp",
+        // Resource
+        "Fury Regeneration",
+      ],
+      Druid: [
+        // Skill categories
+        "Companion Skills", "Wrath Skills", "Human Skills", "Earth Skills", "Nature Magic Skills", "Shapeshifting Skills", "Storm Skills", "Werebear Skills", "Werewolf Skills",
+        // Basic
+        "Claw", "Earth Spike", "Maul", "Storm Strike", "Wind Shear",
+        // Core
+        "Landslide", "Lightning Storm", "Pulverize", "Shred", "Tornado",
+        // Defensive
+        "Blood Howl", "Cyclone Armor", "Debilitating Roar", "Earthen Bulwark",
+        // Wrath / Companion
+        "Boulder", "Hurricane", "Rabies", "Ravens", "Trample", "Poison Creeper", "Wolves",
+        // Resource
+        "Spirit Regeneration",
+      ],
+      Necromancer: [
+        // Skill categories
+        "Corpse Skills", "Curse Skills", "Macabre Skills", "Blood Skills", "Bone Skills", "Darkness Skills", "Minion Skills",
+        // Basic
+        "Bone Splinters", "Decompose", "Hemorrhage", "Reap",
+        // Core
+        "Blight", "Blood Lance", "Blood Surge", "Bone Spear", "Sever",
+        // Macabre / Curse
+        "Blood Mist", "Bone Prison", "Bone Spirit", "Corpse Explosion", "Corpse Tendrils", "Decrepify", "Iron Maiden",
+        // Minion
+        "Golem", "Skeleton Mage", "Skeleton Warrior",
+        // Resource
+        "Essence Regeneration",
+      ],
+      Rogue: [
+        // Skill categories
+        "Agility Skills", "Imbuement Skills", "Subterfuge Skills", "Arrow Storm Skills", "Grenade Skills", "Cutthroat Skills", "Marksman Skills", "Trap Skills", "Disciple Skills",
+        // Basic
+        "Blade Shift", "Forceful Arrow", "Heartseeker", "Invigorating Strike", "Puncture",
+        // Core
+        "Barrage", "Flurry", "Penetrating Shot", "Rapid Fire", "Twisting Blades", "Dance of Knives",
+        // Agility / Subterfuge
+        "Caltrops", "Cold Imbuement", "Concealment", "Dark Shroud", "Dash", "Poison Imbuement", "Poison Trap", "Shadow Imbuement", "Shadow Step", "Smoke Grenade",
+        // Resource
+        "Energy Regeneration",
+      ],
+      Sorcerer: [
+        // Skill categories
+        "Conjuration Skills", "Mastery Skills", "Frost Skills", "Pyromancy Skills", "Shock Skills",
+        // Basic
+        "Spark", "Fire Bolt", "Frost Bolt", "Arc Lash",
+        // Core
+        "Fireball", "Ice Shards", "Chain Lightning", "Charged Bolts", "Incinerate", "Frozen Orb",
+        // Mastery
+        "Ball Lightning", "Blizzard", "Firewall", "Meteor",
+        // Defensive / Conjuration
+        "Flame Shield", "Frost Nova", "Hydra", "Ice Armor", "Ice Blades", "Lightning Spear", "Teleport", "Familiar",
+        // Resource
+        "Mana Regeneration",
+      ],
+      Spiritborn: [
+        // Spirit categories
+        "Centipede Skills", "Eagle Skills", "Gorilla Skills", "Jaguar Skills", "Potency Skills", "Focus Skills",
+        // Eagle
+        "Quill Volley", "Razor Wings", "Soar",
+        // Jaguar
+        "Rake", "Ravager", "Rushing Claw", "Scourge",
+        // Gorilla
+        "Crushing Hand", "Thrash", "Concussive Stomp", "Counterattack", "Armored Hide", "Payback",
+        // Centipede
+        "Stinger", "Withering Fist", "Toxic Skin", "Touch of Death",
+        // Core / generic
+        "Stone Burst", "Mighty Throw", "Vortex", "Rock Splitter", "Thunderspike",
+      ],
+      Paladin: [
+        // Skill categories
+        "Zealot Skills", "Aura Skills", "Justice Skills", "Valor Skills", "Combat Skills", "Martial Skills",
+        // Auras
+        "Defiance Aura", "Fanaticism Aura", "Holy Light Aura",
+        // Skills
+        "Advance", "Brandish", "Clash", "Holy Bolt", "Blessed Hammer", "Blessed Shield", "Divine Lance", "Shield Bash", "Zeal",
+        "Condemn", "Consecration", "Purify", "Spear of the Heavens", "Aegis", "Falling Star", "Rally", "Shield Charge",
+      ],
+      Warlock: [
+        // Skill categories
+        "Abyss Skills", "Demonology Skills", "Hellfire Skills", "Occult Skills", "Juggernaut Skills",
+        // Skills
+        "Command Fallen", "Doom", "Hellion Sting", "Molten Bomb",
+        "Blazing Scream", "Bombardment", "Dread Claws", "Hell Fracture", "Umbral Chains", "Dark Prison",
+        "Infernal Breath", "Nether Step", "Profane Sentinel", "Rampage",
+        "Sigil of Chaos", "Sigil of Subversion", "Sigil of Summons", "Tortured Wretch", "Tyrant's Grasp", "Wall of Agony",
+      ],
+    };
+    // Build reverse lookup: affix name → [class, ...]
+    const AFFIX_CLASS_LOOKUP = {};
+    Object.entries(CLASS_SKILLS).forEach(([cls, skills]) => {
+      skills.forEach(name => {
+        if (!AFFIX_CLASS_LOOKUP[name]) AFFIX_CLASS_LOOKUP[name] = [];
+        AFFIX_CLASS_LOOKUP[name].push(cls);
+      });
+    });
+    // Apply to AFFIXES, overriding the "All" placeholders
+    AFFIXES.forEach(x => {
+      if (AFFIX_CLASS_LOOKUP[x.affix]) x.classes = AFFIX_CLASS_LOOKUP[x.affix];
+    });
 
     const q = document.getElementById('q'), clear = document.getElementById('clear'), results = document.getElementById('results'), pills = document.getElementById('pills');
     const visibleCount = document.getElementById('visibleCount'), totalCount = document.getElementById('totalCount'), expandAll = document.getElementById('expandAll'), collapseAll = document.getElementById('collapseAll');
