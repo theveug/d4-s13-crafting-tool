@@ -2,7 +2,7 @@
 
 A fast, browser-based tool for searching **Diablo 4 affixes**, planning your **Roll Target** before using the Transfigure system, and identifying which **Tuning Prism** to use for each mod.
 
-**[Live Tool →](https://yourusername.github.io/diablo4-affixes)** *(replace with your GitHub Pages URL)*
+**[Live Tool →](https://yourusername.github.io/diablo4-affixes)** _(replace with your GitHub Pages URL)_
 
 ---
 
@@ -33,18 +33,18 @@ This tool lets you search and browse every affix in the game, check off the ones
 
 ## Tuning Prism Reference
 
-| Badge | Prism | Targets |
-|---|---|---|
-| 🟠 **Aggressive** | Aggressive Tuning Prism | Offensive mods — weapon damage, attack speed, crit, damage multipliers |
-| 🔵 **Protector's** | Protector's Tuning Prism | Defensive mods — max life, armour, damage reduction, dodge, **Resistance to All Elements** |
-| 🟣 **Chromatic** | Chromatic Tuning Prism | Individual elemental resistances only (Fire, Cold, Lightning, Poison, Shadow, Physical) |
-| 🟡 **Pragmatic** | Pragmatic Tuning Prism | Utility — cooldown reduction, lucky hit chance, potion capacity, healing received, impairment reduction |
-| 🟢 **Adept's** | Adept's Tuning Prism | Skill ranks and core stats |
-| 🩵 **Resourceful** | Resourceful Tuning Prism | Resource generation and max resource |
+| Badge              | Prism                    | Targets                                                                                                 |
+| ------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| 🟠 **Aggressive**  | Aggressive Tuning Prism  | Offensive mods — weapon damage, attack speed, crit, damage multipliers                                  |
+| 🔵 **Protector's** | Protector's Tuning Prism | Defensive mods — max life, armour, damage reduction, dodge, **Resistance to All Elements**              |
+| 🟣 **Chromatic**   | Chromatic Tuning Prism   | Individual elemental resistances only (Fire, Cold, Lightning, Poison, Shadow, Physical)                 |
+| 🟡 **Pragmatic**   | Pragmatic Tuning Prism   | Utility — cooldown reduction, lucky hit chance, potion capacity, healing received, impairment reduction |
+| 🟢 **Adept's**     | Adept's Tuning Prism     | Skill ranks and core stats                                                                              |
+| 🩵 **Resourceful** | Resourceful Tuning Prism | Resource generation and max resource                                                                    |
 
 > **Dual-badge warning:** Some affixes (e.g. Strength, Dexterity, individual resistances) appear in two prism pools. Using either prism can accidentally affect them — be careful when rolling an item that has one of these alongside the stat you actually want to target.
 
-> **Resistance to All Elements** lives in the *Defensive* category but uses the **Protector's** prism — not Chromatic.
+> **Resistance to All Elements** lives in the _Defensive_ category but uses the **Protector's** prism — not Chromatic.
 
 ---
 
@@ -52,7 +52,7 @@ This tool lets you search and browse every affix in the game, check off the ones
 
 1. **Search** — type any affix name in the search box to filter instantly
 2. **Browse by category** — click a pill (Offensive / Defensive / Utility) to focus that section
-3. **Filter by class** — use the class dropdown to hide mods your class can't roll *(note: class assignments are a work in progress and may be incomplete)*
+3. **Filter by class** — use the class dropdown to hide mods your class can't roll _(note: class assignments are a work in progress and may be incomplete)_
 4. **Check your mods** — tick the checkbox on any affix to add it to your Roll Target
 5. **Roll Target mode** — click **Roll Target** in the footer to show only your checked mods; click again to return to the full list
 6. **Clear Picks** — resets all selections and exits Roll Target mode
@@ -67,7 +67,7 @@ Your Roll Target selections are saved in your browser's localStorage, so they pe
 No build step needed. Just open `index.html` in any modern browser.
 
 ```
-git clone https://github.com/yourusername/diablo4-affixes
+git clone https://theveug.github.io/d4-s13-crafting-tool/
 cd diablo4-affixes
 # open index.html in your browser
 ```
@@ -77,7 +77,7 @@ cd diablo4-affixes
 ## Notes & Caveats
 
 - Prism information is based on Season 13 data. Check patch notes if things change after a major update.
-- The class filter is community-sourced and **incomplete** — some skill mods may be missing or assigned to the wrong class. If in doubt, keep the filter on *All Classes*.
+- The class filter is community-sourced and **incomplete** — some skill mods may be missing or assigned to the wrong class. If in doubt, keep the filter on _All Classes_.
 - Barrier Generation and Fortify Generation are labelled as Pragmatic prism targets but are currently reported as bugged/untargetable in Transfigure.
 
 ---
@@ -88,4 +88,4 @@ If you spot a wrong class assignment, a missing affix, or an outdated prism mapp
 
 ---
 
-*Not affiliated with Blizzard Entertainment. Diablo® is a registered trademark of Blizzard Entertainment, Inc.*
+_Not affiliated with Blizzard Entertainment. Diablo® is a registered trademark of Blizzard Entertainment, Inc._
