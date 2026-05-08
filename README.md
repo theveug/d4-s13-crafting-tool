@@ -2,7 +2,7 @@
 
 A fast, browser-based tool for searching **Diablo 4 affixes**, planning your **Roll Target** before using the Transfigure system, and identifying which **Tuning Prism** to use for each mod.
 
-**[Live Tool →](https://yourusername.github.io/diablo4-affixes)** _(replace with your GitHub Pages URL)_
+**[Live Tool →](https://theveug.github.io/d4-s13-crafting-tool/)** _(replace with your GitHub Pages URL)_
 
 ---
 
@@ -68,7 +68,7 @@ No build step needed. Just open `index.html` in any modern browser.
 
 ```
 git clone https://theveug.github.io/d4-s13-crafting-tool/
-cd diablo4-affixes
+cd d4-s13-crafting-tool
 # open index.html in your browser
 ```
 
